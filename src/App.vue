@@ -1,13 +1,22 @@
-<script setup>
-
-</script>
-
 <template>
   <div>
-   
+   <LogoComponent/>
   </div>
 
 </template>
+
+<script setup>
+import LogoComponent from './components/Logo.vue';
+
+export default {
+  name: 'App',
+  components: {
+    LogoComponent
+  }
+};
+</script>
+
+
 
 <style scoped>
 .logo {
