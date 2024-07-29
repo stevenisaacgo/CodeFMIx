@@ -5,6 +5,7 @@
         <div>CodeFMIx</div>
         <nav v-if="route.path !== '/'" class="flex justify-between py-2 px-8">
             <div class="flex md:flex justify-between items-center gap-8">
+                <div>finally ?</div>
                 <RouterLink to="/">Home</RouterLink>
 
                 <Menu as="div" class="relative inline-block text-left">
