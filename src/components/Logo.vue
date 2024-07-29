@@ -9,8 +9,8 @@
         name: "LogoComponent",
         
         data() {
-            return {
-            }
+            // return {
+            // }
         }
     };
 </script>
