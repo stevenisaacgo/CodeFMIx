@@ -1,11 +1,11 @@
 <template>
-  <div>
-   <LogoComponent/>
+  <div >
+   <LogoComponent class="w-[50px]" />
   </div>
 
 </template>
 
-<script setup>
+<script>
 import LogoComponent from './components/Logo.vue';
 
 export default {
@@ -18,7 +18,7 @@ export default {
 
 
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
