@@ -1,18 +1,30 @@
-<script setup>
-import Header from "./components/header/Header.vue";
-import { RouterView } from "vue-router";
-</script>
-
 <template>
     <div class="min-h-[100vh]">
-        <Header />
+        <Header/>
         <main>
             <RouterView />
+   <LogoComponent class="w-[50px]" />
         </main>
     </div>
+
 </template>
 
-<style scoped>
+<script>
+import Header from "./components/header/Header.vue";
+import { RouterView } from "vue-router";
+import LogoComponent from './components/Logo.vue';
+
+export default {
+  name: 'App',
+  components: {
+    LogoComponent
+  }
+};
+</script>
+
+
+
+<style>
 .logo {
     height: 6em;
     padding: 1.5em;
