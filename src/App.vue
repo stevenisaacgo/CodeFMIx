@@ -4,7 +4,7 @@
         <Header/>
         <main>
             <RouterView />
-   <LogoComponent class="w-[50px]" />
+   
         </main>
     </div>
 </template>

@@ -3,10 +3,10 @@
         <header
             class="flex justify-between items-center py-[10px] w-[1280px] mx-auto min-h-[87px]"
         >
-            <div>CodeFMIx</div>
+            
             <Navigation v-if="route.path !== '/'" />
             <div class="text-3xl">
-                <i>M</i>
+                
             </div>
         </header>
     </div>
