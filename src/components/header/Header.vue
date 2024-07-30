@@ -14,7 +14,7 @@
 
 <script setup>
 import Navigation from "./navigation/Navigation.vue";
-
+import Logo from "../Logo.vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 </script>

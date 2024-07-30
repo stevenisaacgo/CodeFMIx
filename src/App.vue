@@ -1,9 +1,10 @@
 <template>
     <div class="min-h-[100vh]">
-        <Header />
-        <main class="main">
+      <LogoComponent class="w-[50px]" />
+        <Header/>
+        <main>
             <RouterView />
-            <LogoComponent class="w-[50px]" />
+   <LogoComponent class="w-[50px]" />
         </main>
     </div>
 </template>
