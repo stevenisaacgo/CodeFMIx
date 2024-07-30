@@ -5,7 +5,7 @@
         >
             <LogoComponent class="w-[50px]" />
             <Navigation v-if="route.path !== '/'" />
-            <MuteButton />
+            <SoundButton />
         </header>
     </div>
 </template>
@@ -14,6 +14,6 @@
 import Navigation from "./navigation/Navigation.vue";
 import LogoComponent from "../Logo.vue";
 import { useRoute } from "vue-router";
-import MuteButton from "./MuteButton.vue";
+import SoundButton from "./SoundButton.vue";
 const route = useRoute();
 </script>
