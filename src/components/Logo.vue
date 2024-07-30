@@ -6,16 +6,14 @@
 </template>
 
 <script>
-    export default {
-        name: "LogoComponent",
-        
-        data() {
-            // return {
-            // }
-        }
-    };
+export default {
+    name: "LogoComponent",
+
+    data() {
+        // return {
+        // }
+    },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
