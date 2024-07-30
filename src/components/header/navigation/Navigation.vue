@@ -148,9 +148,7 @@
 </template>
 
 <script setup>
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
-import { RouterLink, useRoute } from "vue-router";
-
-const route = useRoute();
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue"; //@headlessui/vue is a library to build our dropdown menu
+import { ChevronDownIcon } from "@heroicons/vue/20/solid"; //@heroicons/vue/20/solid this is a library for dropdown arrows from menu
+import { RouterLink } from "vue-router"; // library that provides router functionality
 </script>
