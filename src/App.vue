@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-[100vh]">
         <Header />
-        <main>
+        <main class="main">
             <RouterView />
         </main>
     </div>

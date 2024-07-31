@@ -1,5 +1,5 @@
 <template>
-    <img :src="iconUrl" @click="handleClick" />
+    <img class="w-[42px]" :src="iconUrl" @click="handleClick" />
 </template>
 
 <script setup>
