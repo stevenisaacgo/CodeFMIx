@@ -7,7 +7,15 @@
     </div>
   </template>
   
+
   <script>
+
+  /* audio */
+  <audio id="arcadeMusic" src="assets/music/arcade-music.mp3" autoplay loop></audio>
+ 
+ 
+ 
+ 
   import StartBtn from '../components/StartBtn.vue';
   
   export default {
