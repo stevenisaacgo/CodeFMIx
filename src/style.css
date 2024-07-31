@@ -63,6 +63,13 @@ button:focus-visible {
   padding: 2em;
 }
 
+.work-sans {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 #app {
   width: 100%;
   text-align: center;
