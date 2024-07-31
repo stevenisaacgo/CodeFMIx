@@ -11,11 +11,15 @@
 import Header from "./components/header/Header.vue";
 import { RouterView } from "vue-router";
 import { useRoute } from "vue-router";
-import { useApiStore } from ".stores/apiStore.js"
+import { useApiStore } from "./stores/apiStore.js";
 
 const route = useRoute();
 const isInitialPage = route.path === "/";
 const headerAndGapHeight = isInitialPage ? "149px" : "89px";
+
+
+
+
 </script>
 
 <style>
