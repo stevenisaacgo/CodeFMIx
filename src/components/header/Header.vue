@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import Navigation from "./navigation/Navigation.vue";
 import LogoComponent from "../Logo.vue";
 import { useRoute } from "vue-router";
