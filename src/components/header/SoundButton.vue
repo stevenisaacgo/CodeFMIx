@@ -1,7 +1,7 @@
 <template>
     <img class="w-[42px]" :src="iconUrl" @click="handleClick" />
 
-    /* falta poner un audio */
+    
   <audio id="arcadeMusic" src="assets/music/arcade-music.mp3" autoplay loop></audio>
  
 </template>
