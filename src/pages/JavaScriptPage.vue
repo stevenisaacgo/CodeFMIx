@@ -39,11 +39,11 @@
                 <div class="px-8 pt-10 mt-10 border-t-[1px] w-[100%]">
                     <h3>Instrucciones:</h3>
                 </div>
-                <div class="text-white work-sans flex flex-col gap-6 px-8 mt-8">
+                <div class="text-white work-sans flex flex-col gap-6 px-8 pt-8">
                     <p>
                         En este juego, hay algunas preguntas, con diferentes
                         respuestas y tendrás que seleccionar la correcta para
-                        avanzar.
+                        avanzar. Pulsa el botón de inicio y ¡Diviértete!
                     </p>
                 </div>
             </div>
