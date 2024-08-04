@@ -37,8 +37,11 @@ export default {
     },
     methods: {
         handleConfirm() {
-            alert(`Nombre de usuario: ${this.username}`);
-            this.showModal = false;
+            if (this.username) {
+                this.$router.push('/home');
+            } else {
+                alert('Por favor, introduce un nombre de usuario.');
+            }
         }
     }
 };
