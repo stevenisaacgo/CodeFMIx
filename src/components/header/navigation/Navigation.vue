@@ -1,7 +1,7 @@
 <template>
     <nav class="flex justify-between py-2 px-8">
         <div class="flex md:flex justify-between items-center gap-8">
-            <RouterLink to="/home">Home</RouterLink>
+            <RouterLink to="/home">Inicio</RouterLink>
 
             <Menu as="div" class="relative inline-block text-left">
                 <div>
@@ -10,7 +10,7 @@
                         @mouseover="open = true"
                         @mouseLeave="open = false"
                     >
-                        Practice
+                        Práctica
                         <ChevronDownIcon
                             class="-mr-1 h-5 w-5 text-gray-400"
                             aria-hidden="true"
@@ -98,7 +98,7 @@
                                                             'block px-4 py-2 text-sm',
                                                         ]"
                                                         to="/javascript?difficulty-level=easy"
-                                                        >Easy</RouterLink
+                                                        >Fácil</RouterLink
                                                     >
                                                 </MenuItem>
                                                 <MenuItem
@@ -113,7 +113,7 @@
                                                             'block px-4 py-2 text-sm',
                                                         ]"
                                                         to="/javascript?difficulty-level=medium"
-                                                        >Medium</RouterLink
+                                                        >Medio</RouterLink
                                                     >
                                                 </MenuItem>
                                                 <MenuItem
@@ -128,7 +128,7 @@
                                                             'block px-4 py-2 text-sm',
                                                         ]"
                                                         to="/javascript?difficulty-level=hard"
-                                                        >Hard</RouterLink
+                                                        >Difícil</RouterLink
                                                     >
                                                 </MenuItem>
                                             </div>

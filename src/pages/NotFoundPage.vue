@@ -1,9 +1,9 @@
 <template>
     <div class="w-[100%] overflow-hidden">
-        <h2>Oops it looks like this page does not exist.</h2>
+        <h2>Ups, parece que esta página no existe.</h2>
         <p>
-            Click <RouterLink to="/home">here</RouterLink> to go back to the
-            Home page.
+            Click <RouterLink to="/home">aquí</RouterLink> para volver a la
+            página de inicio.
         </p>
     </div>
 </template>
