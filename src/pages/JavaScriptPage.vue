@@ -1,8 +1,8 @@
 <template>
     <div class="w-full grid grid-cols-2 h-full">
-        <div class="border-r-[1px] h-full pt-10 text-left px-[30px]">
-            <h2 class="mb-10">¿Qué es JavaScript?</h2>
-            <div class="text-white work-sans flex flex-col gap-6">
+        <div class="border-r-[1px] h-full pt-10 text-left">
+            <h2 class="px-8">¿Qué es JavaScript?</h2>
+            <div class="text-white work-sans flex flex-col gap-6 px-8">
                 <p>
                     Bienvenidos a The Origins III: JavaScript. La cosa va a
                     ponerse divertida. ✨
@@ -35,8 +35,20 @@
                     porque HTML/CSS no podía agregar funciones dinámicas.
                 </p>
             </div>
+            <div class="">
+                <div class="px-8 pt-10 mt-10 border-t-[1px] w-[100%]">
+                    <h3>Instrucciones:</h3>
+                </div>
+                <div class="text-white work-sans flex flex-col gap-6 px-8 mt-8">
+                    <p>
+                        En este juego, hay algunas preguntas, con diferentes
+                        respuestas y tendrás que seleccionar la correcta para
+                        avanzar.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="border-l-[1px] h-full pt-10 h">
+        <div class="border-l-[1px] h-full pt-10">
             <div class="h-[60%]"><p>Pregunta</p></div>
 
             <div class="border-t-[1px]"><ConsoleComponent /></div>
