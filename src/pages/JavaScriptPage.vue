@@ -1,45 +1,58 @@
 <template>
     <div class="w-full grid grid-cols-2 h-full">
-        <div class="border-r-[1px] h-full pt-10 text-left px-[30px]">
-            <h2 class="mb-10">What is JavaScript?</h2>
-            <div class="text-white work-sans flex flex-col gap-6">
+        <div class="border-r-[1px] h-full pt-10 text-left">
+            <h2 class="px-8">¿Qué es JavaScript?</h2>
+            <div class="text-white work-sans flex flex-col gap-6 px-8">
                 <p>
-                    Welcome to The Origins III: JavaScript! Things are about to
-                    get fun. ✨
+                    Bienvenidos a The Origins III: JavaScript. La cosa va a
+                    ponerse divertida. ✨
                 </p>
                 <p>
-                    The programming language we're learning is called JavaScript
-                    and it powers 97.5% of websites today.
+                    El lenguaje de programación que estamos aprendiendo se llama
+                    JavaScript y es el que impulsa el 97,5 % de los sitios web
+                    actuales.
                 </p>
                 <p>
-                    HTML Logo HTML + Html Logo CSS + Html Logo JavaScript = core
-                    languages of the web.
+                    HTML Logo HTML + Html Logo CSS + Html Logo JavaScript =
+                    lenguajes básicos de la web.
                 </p>
                 <p>
-                    HTML and CSS give a website structure and styling, but
-                    JavaScript makes it interactive and come alive. It lets us
-                    add basic functionality and dynamic behaviors to our web
-                    pages.
+                    HTML y CSS le dan estructura y estilo a un sitio web, pero
+                    JavaScript lo hace interactivo y vivo. Nos permite agregar
+                    funcionalidad básica y comportamientos dinámicos a nuestras
+                    páginas web.
                 </p>
-                <p>But how did it come to be?</p>
+                <p>Pero, ¿cómo surgió?</p>
                 <p>
-                    The 90s was the dawn of the dot-com era, and an internet
-                    browser war was brewing between Netscape and Microsoft. In
-                    1995, a Netscape developer created a buggy new scripting
-                    language... in just 10 days. 😵‍💫
+                    Los años 90 fueron el comienzo de la era puntocom y se
+                    estaba gestando una guerra de navegadores de Internet entre
+                    Netscape y Microsoft. En 1995, un desarrollador de Netscape
+                    creó un nuevo lenguaje de programación lleno de errores...
+                    en solo 10 días. 😵‍💫
                 </p>
                 <p>
-                    This was the beginning of JavaScript. It came out of
-                    necessity because HTML/CSS could not add dynamic features.
+                    Este fue el comienzo de JavaScript. Surgió por necesidad
+                    porque HTML/CSS no podía agregar funciones dinámicas.
                 </p>
             </div>
+            <div class="">
+                <div class="px-8 pt-10 mt-10 border-t-[1px] w-[100%]">
+                    <h3>Instrucciones:</h3>
+                </div>
+                <div class="text-white work-sans flex flex-col gap-6 px-8 pt-8">
+                    <p>
+                        En este juego, hay algunas preguntas, con diferentes
+                        respuestas y tendrás que seleccionar la correcta para
+                        avanzar. Pulsa el botón de inicio y ¡Diviértete!
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="border-l-[1px] h-full pt-10 h">
-            <div class="h-[60%]"><p>Question</p></div>
+        <div class="border-l-[1px] h-full pt-10">
+            <div class="h-[60%]"><p>Pregunta</p></div>
 
-            <div class=" border-t-[1px]"><ConsoleComponent/> </div>
+            <div class="border-t-[1px]"><ConsoleComponent /></div>
         </div>
-
     </div>
 </template>
 
