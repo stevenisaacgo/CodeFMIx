@@ -1,5 +1,5 @@
 <template>
     <div class="w-full">
-        <h1>Practice HTML</h1>
+        <h1>Práctica HTML</h1>
     </div>
 </template>
