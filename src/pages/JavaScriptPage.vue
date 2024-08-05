@@ -51,7 +51,7 @@
         <div class="border-l-[1px] h-full pt-10 h">
             <div class="h-[60%]">
                 <p>Question</p>
-                <QuizComponent :category="'javascript'" :difficulty="'facil'" />
+                <QuizComponent @quizChecked="handleQuizChecked" :category="category" :difficulty="difficulty" />
             </div>
 
             <div class=" border-t-[1px]">
@@ -61,10 +61,34 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import { useRoute } from "vue-router";
+import { ref } from 'vue';
 import ConsoleComponent from "../components/Console.vue";
 import QuizComponent from "../components/QuizComponent.vue";
+
+export default {
+    components: {
+        QuizComponent,
+        ConsoleComponent
+    },
+    setup() {
+        const isCorrect = ref(null);
+        const category = 'javascript';
+        const difficulty = 'facil';
+
+        const handleQuizChecked = (result) => {
+            isCorrect.value = result;
+        };
+
+        return {
+            isCorrect,
+            handleQuizChecked,
+            category,
+            difficulty,
+        };
+    },
+};
 
 </script>
 
