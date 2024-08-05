@@ -16,6 +16,7 @@ Nuestro juego de preguntas sobre programación se creó utilizando las siguiente
 -   **Vue.js**: se utiliza para crear una interfaz de usuario reactiva y dinámica.
 -   **Tailwind CSS**: se emplea para diseñar la aplicación con clases CSS que priorizan la utilidad.
 -   **CSS**: se utilizan estilos adicionales para mejorar la apariencia visual del juego.
+-   **Pina**:
 
 ## Características
 
@@ -40,6 +41,10 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
     ```bash
     npm install
+    ```
+
+    ```bash
+    Necesitas instalar en el Google Chrome la extensión desbloqueo llamada CORS unblock
     ```
 
 3. **Iniciar el servidor de desarrollo**:
