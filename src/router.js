@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage.vue";
 import HtmlPage from "./pages/HtmlPage.vue";
 import CssPage from "./pages/CssPage.vue";
 import JavaScriptPage from "./pages/JavaScriptPage.vue";
+import CreditsPage from "./pages/CreditsPage.vue";
 
 const routes = [
     { path: "/", component: InitialPage, name: "initial" },
@@ -14,6 +15,7 @@ const routes = [
     { path: "/html", component: HtmlPage, name: "html" },
     { path: "/css", component: CssPage, name: "css" },
     { path: "/javascript", component: JavaScriptPage, name: "javascript" },
+    { path: "/credits", component: CreditsPage, name: "credits" },
     { path: "/:pathMatch(.*)*", component: NotFoundPage, name: "notfound" },
 ];
 
