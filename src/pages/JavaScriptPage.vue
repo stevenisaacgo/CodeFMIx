@@ -35,9 +35,14 @@
             </div>
         </div>
         <div class="border-l-[1px] h-full pt-10 h">
-            <div class="h-[60%]"><p>Question</p></div>
+            <div class="h-[60%]">
+                <p>Question</p>
+                <QuizComponent :category="'javascript'" :difficulty="'facil'" />
+            </div>
 
-            <div class=" border-t-[1px]"><ConsoleComponent/> </div>
+            <div class=" border-t-[1px]">
+                <ConsoleComponent />
+            </div>
         </div>
 
     </div>
@@ -46,8 +51,8 @@
 <script setup>
 import { useRoute } from "vue-router";
 import ConsoleComponent from "../components/Console.vue";
+import QuizComponent from "../components/QuizComponent.vue";
 
-const route = useRoute(); //set up the questions level dificulty
 </script>
 
 <style></style>

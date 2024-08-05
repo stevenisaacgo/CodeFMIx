@@ -19,6 +19,7 @@
         <div v-if="showModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
             <div class="bg-[#637b89] p-6 rounded shadow-lg text-center">
                 <h2 class="text-xl mb-4">INTRODUCE NOMBRE DE USUARIO</h2>
+                <img src="https://i.pinimg.com/originals/80/7b/5c/807b5c4b02e765bb4930b7c66662ef4b.gif" alt="gif gato"/>
                 <input type="text" placeholder="Marta" required="true" v-model="username"
                     class="border p-2 mb-4 w-full" />
                 <button @click="handleConfirm" class="bg-[#2a4957] text-white px-4 py-2 rounded">CONFIRMAR</button>
