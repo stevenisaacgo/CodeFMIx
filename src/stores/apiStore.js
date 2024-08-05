@@ -1,27 +1,28 @@
+// stores/apiStore.js
 import { defineStore } from 'pinia';
 import axios from 'axios';
 
-export const useApiStore = defineStore('api', {
+export const useApiStore = defineStore('apiStore', {
     state: () => ({
-        data: null,
+        data: [],
         loading: false,
-        error: null
+        error: null,
     }),
     actions: {
-        async fetchData(categoria, level, limit = 5) {
+        async fetchQuizData(category, difficulty, limit = 1) {
             this.loading = true;
             this.error = null;
             try {
-                const url = `https://www.preguntapi.dev/api/categories/${categoria}?level=${level}&limit=${limit}`;
-                const response = await axios.get(url);
+                const response = await axios.get(`https://www.preguntapi.dev/api/categories/${category}`, {
+                    params: { level: difficulty, limit },
+                });
                 this.data = response.data;
-                return response.data; // Retorna los datos para mayor flexibilidad
-            } catch (error) {
-                this.error = error;
-                console.error('Error fetching data:', error);
+            } catch (err) {
+                this.error = err.response ? err.response.data : err.message;
+                console.error('Error fetching quiz data:', this.error);
             } finally {
                 this.loading = false;
             }
-        }
-    }
+        },
+    },
 });
