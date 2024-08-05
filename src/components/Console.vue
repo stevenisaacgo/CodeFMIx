@@ -39,7 +39,11 @@ export default {
             ],
             };
   },
+  mounted() {
+    const isCorrect = true;
 
+    this.message = this.getRandomResponse(isCorrect);
+  },
   
   methods: {
     getRandomResponse(isCorrect) {
