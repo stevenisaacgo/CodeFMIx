@@ -1,16 +1,14 @@
 <template>
-    <div class="w-full p-4">
+    <div class="w-full p-4 h-full">
         <div v-if="loading" class="text-center text-gray-500">Loading...</div>
         <div v-if="error" class="text-center text-red-500">{{ error }}</div>
         <div v-if="data && data.length">
             <ul>
                 <li v-for="(quiz, quizIndex) in data" :key="quizIndex" class="mb-4">
                     <ul>
-                        <label 
-                        v-for="(answer, answerIndex) in quiz.answers" 
-                        :key="answerIndex"
+                        <label v-for="(answer, answerIndex) in quiz.answers" :key="answerIndex"
                             class="flex items-center bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-2 hover:bg-indigo-300 cursor-pointer">
-                            <input type="radio" :name="'quiz-' + quizIndex" v-model="selectedAnswers[quizIndex]"
+                            <input type="radio" :name="'quiz-' + quizIndex" v-model="selectedAnswers[answerIndex]"
                                 :value="answer" class="mr-2" />
                             <span>{{ answer }}</span>
                         </label>
@@ -42,9 +40,10 @@ export default {
             required: true,
         },
     },
-    setup(props) {
+    emits: ['quizChecked'],
+    setup(props,{ emit }) {
         const apiStore = useApiStore();
-        const selectedAnswers = ref([]);
+        const selectedAnswers = ref({});
         const loading = ref(false);
         const error = ref(null);
         const isCorrect = ref(null);
@@ -63,14 +62,24 @@ export default {
 
         const checkQuiz = () => {
             const correctAnswers = apiStore.data.map((quiz) => quiz.correct_answer);
-            isCorrect.value = selectedAnswers.value.every((answer, index) => answer === correctAnswers[index]);
-            console.log('Selected Answers:', apiStore.data.map((quiz) => quiz) );
-            console.log('Is Correct:', isCorrect.value);
+            console.log(selectedAnswers, correctAnswers[0], Object.keys(selectedAnswers.value)[0])
+            console.log(apiStore.data.map((quiz) => quiz));
+            if(Object.keys(selectedAnswers.value)[0] === correctAnswers[0]){
+                isCorrect.value = true;
+                selectedAnswers.value = {};
+
+            }else{
+                isCorrect.value = false;
+                selectedAnswers.value = {};
+
+            }
+
+            emit('quizChecked', isCorrect.value); // Emit the isCorrect value to the parent
         };
 
-        const buttonText = computed(() => (isCorrect.value === null ? 'Run' : isCorrect.value ? 'Next' : 'Run'));
-        const buttonClass = computed(() => (isCorrect.value === null ? '' : isCorrect.value ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-500 hover:bg-blue-600'));
-
+        const buttonText = computed(() => (isCorrect.value === null ? 'Run' : isCorrect.value ? 'Next ->' : 'Run'));
+        const buttonClass = computed(() => (isCorrect.value === null ? '' : isCorrect.value ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-500 hover:bg-red-600'));
+ 
         onMounted(() => {
             fetchQuizData();
         });
