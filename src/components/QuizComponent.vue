@@ -64,7 +64,7 @@ export default {
         const checkQuiz = () => {
             const correctAnswers = apiStore.data.map((quiz) => quiz.correct_answer);
             isCorrect.value = selectedAnswers.value.every((answer, index) => answer === correctAnswers[index]);
-            console.log('Selected Answers:', selectedAnswers.index);
+            console.log('Selected Answers:', apiStore.data.map((quiz) => quiz) );
             console.log('Is Correct:', isCorrect.value);
         };
 
