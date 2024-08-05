@@ -55,7 +55,7 @@
             </div>
 
             <div class=" border-t-[1px]">
-                <ConsoleComponent />
+                <ConsoleComponent :isCorrect="isCorrect" />
             </div>
         </div>
     </div>
