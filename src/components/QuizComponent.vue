@@ -4,14 +4,24 @@
         <div v-if="error" class="text-center text-red-500">{{ error }}</div>
         <div v-if="data && data.length">
             <ul>
-                <li v-for="(quiz, quizIndex) in data" :key="quizIndex" class="mb-4">
+                <li
+                    v-for="(quiz, quizIndex) in data"
+                    :key="quizIndex"
+                    class="mb-4"
+                >
                     <ul>
-                        <label 
-                        v-for="(answer, answerIndex) in quiz.answers" 
-                        :key="answerIndex"
-                            class="flex items-center bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-2 hover:bg-indigo-300 cursor-pointer">
-                            <input type="radio" :name="'quiz-' + quizIndex" v-model="selectedAnswers[quizIndex]"
-                                :value="answer" class="mr-2" />
+                        <label
+                            v-for="(answer, answerIndex) in quiz.answers"
+                            :key="answerIndex"
+                            class="flex items-center bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-2 hover:bg-indigo-300 cursor-pointer"
+                        >
+                            <input
+                                type="radio"
+                                :name="'quiz-' + quizIndex"
+                                v-model="selectedAnswers[quizIndex]"
+                                :value="answer"
+                                class="mr-2"
+                            />
                             <span>{{ answer }}</span>
                         </label>
                     </ul>
@@ -19,8 +29,11 @@
             </ul>
         </div>
         <div class="flex justify-end p-3">
-            <button @click="checkQuiz" :class="buttonClass"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+            <button
+                @click="checkQuiz"
+                :class="buttonClass"
+                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            >
                 {{ buttonText }}
             </button>
         </div>
@@ -28,8 +41,8 @@
 </template>
 
 <script>
-import { ref, onMounted, computed } from 'vue';
-import { useApiStore } from '../stores/apiStore';
+import { ref, onMounted, computed } from "vue";
+import { useApiStore } from "../stores/apiStore";
 
 export default {
     props: {
@@ -62,14 +75,29 @@ export default {
         };
 
         const checkQuiz = () => {
-            const correctAnswers = apiStore.data.map((quiz) => quiz.correct_answer);
-            isCorrect.value = selectedAnswers.value.every((answer, index) => answer === correctAnswers[index]);
-            console.log('Selected Answers:', apiStore.data.map((quiz) => quiz) );
-            console.log('Is Correct:', isCorrect.value);
+            const correctAnswers = apiStore.data.map(
+                (quiz) => quiz.correct_answer
+            );
+            isCorrect.value = selectedAnswers.value.every(
+                (answer, index) => answer === correctAnswers[index]
+            );
+            console.log(
+                "Selected Answers:",
+                apiStore.data.map((quiz) => quiz)
+            );
+            console.log("Is Correct:", isCorrect.value);
         };
 
-        const buttonText = computed(() => (isCorrect.value === null ? 'Run' : isCorrect.value ? 'Next' : 'Run'));
-        const buttonClass = computed(() => (isCorrect.value === null ? '' : isCorrect.value ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-500 hover:bg-blue-600'));
+        const buttonText = computed(() =>
+            isCorrect.value === null ? "Run" : isCorrect.value ? "Next" : "Run"
+        );
+        const buttonClass = computed(() =>
+            isCorrect.value === null
+                ? ""
+                : isCorrect.value
+                ? "bg-green-500 hover:bg-green-600"
+                : "bg-blue-500 hover:bg-blue-600"
+        );
 
         onMounted(() => {
             fetchQuizData();
