@@ -50,7 +50,7 @@
                 <QuizComponent />
             </div>
 
-            <div class=" border-t-[1px]">
+            <div class="border-t-[1px]">
                 <ConsoleComponent />
             </div>
         </div>
@@ -59,11 +59,11 @@
 
 <script>
 import { useQuizStore } from "../stores";
-import { ref,computed } from 'vue';
+import { ref, watch } from "vue";
 import ConsoleComponent from "../components/Console.vue";
 import QuizComponent from "../components/QuizComponent.vue";
 import QuestionComponent from "../components/QuestionComponent.vue";
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 
 export default {
     components: {
@@ -71,21 +71,27 @@ export default {
         QuizComponent,
         ConsoleComponent,
     },
+
     setup() {
         const quizStore = useQuizStore();
-        const category = ref('javascript');
+        const category = ref("javascript");
         const route = useRoute();
-        const level = ref(route.params.difficultyLevel);
-        console.log(level);
+        const level = ref(route.query.difficultyLevel);
+        watch(
+            () => route.query.difficultyLevel,
+            (newLevel) => {
+                level.value = newLevel;
+                quizStore.loadQuestions(category.value, level.value);
+            }
+        );
         quizStore.loadQuestions(category.value, level.value);
-        
+
         return {
             category,
             level,
         };
     },
 };
-
 </script>
 
 <style></style>

@@ -97,7 +97,7 @@
                                                                 : 'text-[#ffffffde]',
                                                             'block px-4 py-2 text-sm',
                                                         ]"
-                                                        to="/javascript?difficultyLevel=easy"
+                                                        to="/javascript?difficultyLevel=facil"
                                                         >Fácil</RouterLink
                                                     >
                                                 </MenuItem>
@@ -112,7 +112,7 @@
                                                                 : 'text-[#ffffffde]',
                                                             'block px-4 py-2 text-sm',
                                                         ]"
-                                                        to="/javascript?difficultyLevel=medium"
+                                                        to="/javascript?difficultyLevel=normal"
                                                         >Medio</RouterLink
                                                     >
                                                 </MenuItem>
@@ -127,7 +127,7 @@
                                                                 : 'text-[#ffffffde]',
                                                             'block px-4 py-2 text-sm',
                                                         ]"
-                                                        :to="{ name: 'javascript', params: { difficultyLevel: 'dificil' }}"
+                                                        to="/javascript?difficultyLevel=dificil"
                                                         >Difícil</RouterLink
                                                     >
                                                 </MenuItem>
