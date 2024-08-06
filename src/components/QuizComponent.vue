@@ -1,7 +1,7 @@
 <!-- src/components/AnswersComponent.vue -->
 <template>
-    <div class="answers">
-        <h2 class="text-2xl font-bold mb-4">{{ question }}</h2>
+    <div class="answers" v-if="answers">
+        <h2 class="text-xl mb-4">{{ question }}</h2>
         <div v-for="(answer, key) in answers" :key="key" class="mb-4">
             <label
                 class="flex items-center bg-gray-100 text-[#242424] rounded-md px-3 py-2 my-2 hover:bg-[#5c7c89] cursor-pointer"
@@ -20,6 +20,9 @@
             {{ buttonText }}
         </button>
     </div>
+    <div v-else>
+        <h2 class="text-2xl font-bold mb-4">Loading...</h2>
+    </div>
 </template>
 
 <script>
@@ -32,6 +35,7 @@ export default {
         const quizStore = useQuizStore();
         const question = computed(() => quizStore.currentQuestion?.question);
         const answers = computed(() => quizStore.currentQuestion?.answers);
+        
         const selectedAnswer = ref(null);
 
         const correctAnswer = computed(() => quizStore.correctAnswer);
