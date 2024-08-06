@@ -63,6 +63,7 @@ import { ref,computed } from 'vue';
 import ConsoleComponent from "../components/Console.vue";
 import QuizComponent from "../components/QuizComponent.vue";
 import QuestionComponent from "../components/QuestionComponent.vue";
+import { useRoute } from 'vue-router';
 
 export default {
     components: {
@@ -73,8 +74,11 @@ export default {
     setup() {
         const quizStore = useQuizStore();
         const category = ref('javascript');
-        const level = ref('facil');
+        const route = useRoute();
+        const level = ref(route.params.difficultyLevel);
+        console.log(level);
         quizStore.loadQuestions(category.value, level.value);
+        
         return {
             category,
             level,
