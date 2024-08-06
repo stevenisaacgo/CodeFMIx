@@ -27,6 +27,7 @@ import { computed, ref, watch } from "vue";
 
 export default {
     setup() {
+        let attempts = 0;
         const quizStore = useQuizStore();
         const answers = computed(() => quizStore.currentQuestion?.answers);
         const selectedAnswer = ref(null);
@@ -38,10 +39,13 @@ export default {
 
         const handleButtonClick = () => {
             if (correctAnswer.value) {
+                quizStore.updateScore(attempts);
                 quizStore.nextQuestion();
+                attempts = 0;
             } else {
                 quizStore.selectAnswer(selectedAnswer.value);
                 quizStore.checkAnswer();
+                attempts++;
             }
         };
 

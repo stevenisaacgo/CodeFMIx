@@ -1,12 +1,8 @@
 <template>
     <div class="w-full h-auto flex flex-col md:flex-row">
-        <div
-            class="md:border-r-[1px] h-full pt-4 md:pt-10 text-left flex-grow md:flex-1"
-        >
+        <div class="md:border-r-[1px] h-full pt-4 md:pt-10 text-left flex-grow md:flex-1">
             <h2 class="px-4 md:px-8 pb-4 md:pb-8">¿Qué es JavaScript?</h2>
-            <div
-                class="text-white work-sans flex flex-col gap-4 md:gap-6 px-4 md:px-8"
-            >
+            <div class="text-white work-sans flex flex-col gap-4 md:gap-6 px-4 md:px-8">
                 <p>
                     Bienvenidos a The Origins III: JavaScript. La cosa va a
                     ponerse divertida. ✨
@@ -43,9 +39,7 @@
         <div class="md:border-l-[1px] h-full flex flex-col flex-grow md:flex-1">
             <div class="px-4 md:px-8 pb-4 md:mt-10 w-full">
                 <h2>Pregunta:</h2>
-                <div
-                    class="text-white work-sans flex flex-col gap-4 md:gap-6 pt-4 md:pt-8"
-                >
+                <div class="text-white work-sans flex flex-col gap-4 md:gap-6 pt-4 md:pt-8">
                     <QuestionComponent />
                 </div>
             </div>
@@ -76,16 +70,18 @@ export default {
 
     setup() {
         const quizStore = useQuizStore();
-        const category = ref("javascript");
         const route = useRoute();
-        const level = ref(route.query.difficultyLevel);
+        const category = ref(route.query.categoria);
+        const level = ref(route.query.level);
+
+        // Watch for changes in both category and level
         watch(
-            () => route.query.difficultyLevel,
-            (newLevel) => {
+            () => [route.query.categoria, route.query.level],
+            ([newCategory, newLevel]) => {
+                category.value = newCategory;
                 level.value = newLevel;
                 quizStore.loadQuestions(category.value, level.value);
-            }
-        );
+            });
         quizStore.loadQuestions(category.value, level.value);
 
         return {
