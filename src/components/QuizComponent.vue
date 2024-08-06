@@ -16,7 +16,7 @@
                 {{ answer }}
             </label>
         </div>
-        <button @click="handleButtonClick" class="btn btn-primary">
+        <button @click="handleButtonClick" :class="buttonClass">
             {{ buttonText }}
         </button>
     </div>
@@ -40,8 +40,10 @@ export default {
 
         const correctAnswer = computed(() => quizStore.correctAnswer);
         const buttonText = computed(() =>
-            correctAnswer.value ? "Next" : "Submit"
+            correctAnswer.value ? "Next ->" : "Run Code"
         );
+        const buttonClass = computed(() => (correctAnswer.value === null ? 'btn bg-[#7f9ba9] hover:bg-[#2a4957]' : correctAnswer.value ? 'btn bg-green-500 hover:bg-green-600' : 'btn bg-red-200 hover:bg-red-400'));
+
 
         const handleButtonClick = () => {
             if (correctAnswer.value) {
@@ -65,6 +67,7 @@ export default {
             answers,
             selectedAnswer,
             buttonText,
+            buttonClass,
             handleButtonClick,
             question
         };
@@ -78,7 +81,6 @@ export default {
 }
 
 .btn {
-    background-color: #7f9ba9;
     color: white;
     padding: 10px 20px;
     border: none;
