@@ -70,4 +70,4 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 ## Agradecimientos
 
-Nos gustaría agradecer a la comunidad de CodeOp por proporcionar las herramientas y bibliotecas que hicieron posible este proyecto.
+Nos gustaría agradecer a nuestros compañeros de clase por la camaradería, a la maestra Anna y a Camila por el soporte y conocimiento compartido en clase. Nos gustaría agradecer a la comunidad de CodeOp por proporcionar las herramientas y bibliotecas que hicieron posible este proyecto.
