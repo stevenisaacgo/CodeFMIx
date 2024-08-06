@@ -1,8 +1,12 @@
 <template>
-    <div class="w-full grid grid-cols-2 h-full">
-        <div class="border-r-[1px] h-full pt-10 text-left">
-            <h2 class="px-8">¿Qué es JavaScript?</h2>
-            <div class="text-white work-sans flex flex-col gap-6 px-8">
+    <div class="w-full h-auto flex flex-col md:flex-row">
+        <div
+            class="md:border-r-[1px] h-full pt-4 md:pt-10 text-left flex-grow md:flex-1"
+        >
+            <h2 class="px-4 md:px-8 pb-4 md:pb-8">¿Qué es JavaScript?</h2>
+            <div
+                class="text-white work-sans flex flex-col gap-4 md:gap-6 px-4 md:px-8"
+            >
                 <p>
                     Bienvenidos a The Origins III: JavaScript. La cosa va a
                     ponerse divertida. ✨
@@ -35,21 +39,19 @@
                     porque HTML/CSS no podía agregar funciones dinámicas.
                 </p>
             </div>
-            <div class="">
-                <div class="px-8 pt-10 mt-10 border-t-[1px] w-[100%]">
-                    <h3>Instrucciones:</h3>
-                </div>
-                <div class="text-white work-sans flex flex-col gap-6 px-8 pt-8">
+        </div>
+        <div class="md:border-l-[1px] h-full flex flex-col flex-grow md:flex-1">
+            <div class="px-4 md:px-8 pb-4 md:mt-10 w-full">
+                <h2>Pregunta:</h2>
+                <div
+                    class="text-white work-sans flex flex-col gap-4 md:gap-6 pt-4 md:pt-8"
+                >
                     <QuestionComponent />
                 </div>
             </div>
-        </div>
-        <div class="border-l-[1px] h-full pt-10 h">
-            <div class="h-[60%]">
-                <p>Respuestas</p>
+            <div class="flex-grow">
                 <QuizComponent />
             </div>
-
             <div class="border-t-[1px]">
                 <ConsoleComponent />
             </div>
@@ -94,4 +96,28 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+/* Adjust padding and margin for better responsiveness */
+@media (max-width: 768px) {
+    .px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .mt-10 {
+        margin-top: 1rem;
+    }
+
+    .pt-10 {
+        padding-top: 1rem;
+    }
+
+    .pb-8 {
+        padding-bottom: 1rem;
+    }
+
+    .gap-6 {
+        gap: 1rem;
+    }
+}
+</style>
