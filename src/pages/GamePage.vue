@@ -37,14 +37,20 @@
             </div>
         </div>
         <div class="md:border-l-[1px] h-full flex flex-col flex-grow md:flex-1">
-            <div class="px-4 md:px-8 pb-4 md:mt-10 w-full">
+            <div v-if="!quizCompleted" class="px-4 md:px-8 pb-4 md:mt-10 w-full">
                 <h2>Pregunta:</h2>
-                <div class="text-white work-sans flex flex-col gap-4 md:gap-6 pt-4 md:pt-8">
+                <!-- <div class="text-white work-sans flex flex-col gap-4 md:gap-6 pt-4 md:pt-8">
                     <QuestionComponent />
-                </div>
-            </div>
-            <div class="flex-grow">
+                </div> -->
                 <QuizComponent />
+            </div>
+            <div v-else class="px-4 md:px-8 pb-4 md:mt-10 w-full">
+                <h2>¡Felicidades!</h2>
+                <p class="text-white work-sans">
+                    Has completado el quiz. ¡Gracias por jugar!
+                    ¿Te gustaría volver a jugar?
+                    Elige nueva categoría y nivel.
+                </p>
             </div>
             <div class="border-t-[1px]">
                 <ConsoleComponent />
@@ -55,7 +61,7 @@
 
 <script>
 import { useQuizStore } from "../stores";
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import ConsoleComponent from "../components/Console.vue";
 import QuizComponent from "../components/QuizComponent.vue";
 import QuestionComponent from "../components/QuestionComponent.vue";
@@ -70,11 +76,11 @@ export default {
 
     setup() {
         const quizStore = useQuizStore();
+        const quizCompleted = computed(() => quizStore.quizCompleted);
         const route = useRoute();
         const category = ref(route.query.categoria);
         const level = ref(route.query.level);
 
-        // Watch for changes in both category and level
         watch(
             () => [route.query.categoria, route.query.level],
             ([newCategory, newLevel]) => {
@@ -82,11 +88,13 @@ export default {
                 level.value = newLevel;
                 quizStore.loadQuestions(category.value, level.value);
             });
+
         quizStore.loadQuestions(category.value, level.value);
 
         return {
             category,
             level,
+            quizCompleted,
         };
     },
 };
