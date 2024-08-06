@@ -25,10 +25,18 @@ const handleClick = () => {
     }
 };
 
+const playSound = () => {
+    soundMusic.value.play().catch((error) => {
+        console.log("Auto-play was prevented:", error);
+    });
+};
+
 onMounted(() => {
     soundMusic.value = document.querySelector("audio");
-    // Start playing the audio automatically on mount
-    soundMusic.value.play();
+    // Attempt to play the audio on mount
+    playSound();
+    // Ensure playback starts after the first user interaction
+    document.addEventListener("click", playSound, { once: true });
 });
 </script>
 
