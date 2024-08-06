@@ -6,10 +6,11 @@ export const useQuizStore = defineStore('quiz', {
   state: () => ({
     questions: [],
     currentQuestionIndex: 0,
+    score: 0,
     currentQuestion: null,
     selectedAnswer: null,
     correctAnswer: null,
-    username: 'Isaac',
+    username: 'Usuario',
   }),
   actions: {
     async loadQuestions(category, level) {
@@ -26,6 +27,12 @@ export const useQuizStore = defineStore('quiz', {
     checkAnswer() {
       const currentQuestion = this.questions[this.currentQuestionIndex];
       this.correctAnswer = this.selectedAnswer === currentQuestion.correct_answer;
+    },
+    updateScore(attempts){
+      const points = Math.max(1, 100 - (attempts-1) * 6);
+      console.log(points);
+      console.log(attempts)
+      this.score += points;
     },
     nextQuestion() {
       if (this.currentQuestionIndex < this.questions.length - 1) {
