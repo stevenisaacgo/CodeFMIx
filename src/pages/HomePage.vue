@@ -21,21 +21,16 @@
             </p>
             <p>Aquí tienes una pequeña demostración para aprender a jugar:</p>
           </div>
-          <div>
-            <div class="px-8 pt-18 mt-10 w-[100%]">
-              <h3>Pregunta:</h3>
-            </div>
-            <div class="text-white work-sans flex flex-col gap-6 px-8 pt-8">
-              <p>Cómo insertar en JS un comentario que tiene más de una línea?</p>
-            </div>
-          
-          </div>
+         
         </div>
       </div>
       <div class="border-l-[1px] h-full pt-10 h">
         <div class="h-[60%]">
-          <p>Posibles respuestas:</p>
+          <p>Pregunta:</p>
           <div class="text-white work-sans  px-8 pt-8">
+            <div class="question">
+            <h2 class="text-2xl font-bold mb-4">Cómo insertar un comentario que tiene más de una línea?</h2>
+            </div>
             <div>
               <!-- @change="checkAnswer" para los radio porque se activa cuando se selecciona uno -->
               <input type="radio" name="answer" value="answer_a" v-model="selectedAnswer" @change="checkAnswer" />
