@@ -21,7 +21,7 @@
                 <h2 class="text-xl mb-4">INTRODUCE NOMBRE DE USUARIO</h2>
                 <img src="https://i.pinimg.com/originals/80/7b/5c/807b5c4b02e765bb4930b7c66662ef4b.gif" alt="gif gato"/>
                 <input type="text" placeholder="Marta" required="true" v-model="username"
-                    class="border p-2 mb-4 w-full" />
+                    class="border p-2 mb-4 w-full bg-[#242424] text-white" />
                 <button @click="handleConfirm" class="bg-[#2a4957] text-white px-4 py-2 rounded">CONFIRMAR</button>
             </div>
         </div>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { useQuizStore } from '../stores/index';
+
 export default {
     data() {
         return {
@@ -39,6 +41,8 @@ export default {
     methods: {
         handleConfirm() {
             if (this.username) {
+                const quizStore = useQuizStore();
+                quizStore.setUsername(this.username);
                 this.$router.push('/home');
             } else {
                 alert('Por favor, introduce un nombre de usuario.');

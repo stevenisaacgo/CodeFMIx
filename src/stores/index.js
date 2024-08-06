@@ -17,6 +17,9 @@ export const useQuizStore = defineStore('quiz', {
       this.currentQuestionIndex = 0;
       this.currentQuestion = this.questions[this.currentQuestionIndex];
     },
+    setUsername(username) {
+      this.username = username;
+    },
     selectAnswer(answer) {
       this.selectedAnswer = answer;
     },
