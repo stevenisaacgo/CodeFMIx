@@ -89,7 +89,7 @@ export default {
 methods: {
     checkAnswer() {
       if (this.selectedAnswer === this.correctAnswer) {
-        this.message = "¡Correcto! El siguiente paso será escoger categoría y nivel, ¡Tú puedes!";
+        this.message = "¡Correcto! El siguiente paso será escoger lenguaje y nivel, ¡Tú puedes!";
       } else {
         this.message = "No te preocupes, poco a poco aprenderás, vuelve a internarlo.";
       }
