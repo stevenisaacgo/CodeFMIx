@@ -10,7 +10,7 @@ export const useQuizStore = defineStore('quiz', {
     currentQuestion: null,
     selectedAnswer: null,
     correctAnswer: null,
-    username: 'Isaac',
+    username: 'Usuario',
   }),
   actions: {
     async loadQuestions(category, level) {
