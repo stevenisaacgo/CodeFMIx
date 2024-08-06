@@ -28,6 +28,11 @@ export default {
       default: false
     }
   },
+
+  mounted() {    const isCorrect = true;
+
+    this.message = this.getRandomResponse(isCorrect);
+
   data() {
     return {
       message: "",
@@ -44,6 +49,7 @@ export default {
         "Fallaste, ¡prueba otra vez!"
       ]
     };
+
   },
   watch: {
     isCorrect(newVal) {
