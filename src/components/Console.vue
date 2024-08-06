@@ -12,64 +12,66 @@
             </div>
             <p class="text-green-400 mt-4">$ npm install CodeFMIx</p>
 
-            <p class="text-white mt-2">{{ message }}</p>
-            <p>{{ isCorrect }}</p>
-
-            <p class="text-green-400 mt-2">$</p>
-        </div>
+      <p class="text-white mt-2">{{ message }}</p>
+      <p class="text-green-400 mt-2">$</p>
     </div>
+  </div>
 </template>
 
 <script>
+import { ref, computed, watch } from 'vue';
+import { useQuizStore } from '../stores/index';
+
 export default {
-    name: "ConsoleComponent",
-    props: {
-        isCorrect: {
-            type: Boolean,
-            required: true,
-            default: false,
-        },
-    },
+  name: "ConsoleComponent",
+  setup() {
+    const quizStore = useQuizStore();
+    const correctAnswer = computed(() => quizStore.correctAnswer);
+    const username = computed(() => quizStore.username);
+    const message = ref("");
 
-    data() {
-        return {
-            message: "",
-            correctResponses: [
-                "¡Bien hecho!",
-                "Crack!",
-                "¡Correcto!",
-                "¡Menuda racha!",
-            ],
-            incorrectResponses: [
-                "Respuesta incorrecta.",
-                "Inténtalo de nuevo.",
-                "Prueba de nuevo, ¡tú puedes!",
-                "Fallaste, ¡prueba otra vez!",
-            ],
-        };
-    },
-    mounted() {
-        this.message = this.getRandomResponse(this.isCorrect);
-    },
 
-    watch: {
-        isCorrect(newVal) {
-            const responses = newVal
-                ? this.correctResponses
-                : this.incorrectResponses;
-            const randomIndex = Math.floor(Math.random() * responses.length);
-            this.message = responses[randomIndex];
-        },
-    },
-    methods: {
-        getRandomResponse(isCorrect) {
-            const responses = isCorrect
-                ? this.correctResponses
-                : this.incorrectResponses;
-            const randomIndex = Math.floor(Math.random() * responses.length);
-            return responses[randomIndex];
-        },
-    },
+    const correctResponses = [
+      "¡Bien hecho,"+username.value+"!",
+      "¡Increíble, "+username.value+"! ¡Lo lograste!",
+      "¡Correcto, "+username.value+"! ¡Eres un crack!",
+      "¡Menuda racha, "+username.value+"! Sigue así.",
+      "¡Bien hecho, "+username.value+"! ¡Eres todo un pro!",
+      "¡Bravo, "+username.value+"! ¡Respuesta perfecta!",
+      "¡Exactamente, "+username.value+"! ¡Sigue así!",
+      "¡Gran trabajo, "+username.value+"! ¡Estás en racha!",
+      "¡Lo lograste, "+username.value+"! ¡Qué genial!",
+      "¡Acertaste, "+username.value+"! ¡Sigue con ese ritmo!"
+    ];
+
+    const incorrectResponses = [
+      "Respuesta incorrecta, "+username.value+". ¡Inténtalo de nuevo!",
+      "No es correcto, "+username.value+". ¡Prueba otra vez!",
+      "Fallaste, "+username.value+". ¡Sé que puedes hacerlo!",
+      "Incorrecto, "+username.value+". ¡No te rindas!",
+      "Casi, "+username.value+". ¡Intenta de nuevo!",
+      "No te preocupes, "+username.value+". ¡Puedes hacerlo mejor!",
+      "¡Ánimo, "+username.value+"! ¡Inténtalo otra vez!",
+      "No fue la correcta, "+username.value+". ¡Sigue intentando!",
+      "Sigue adelante, "+username.value+". ¡La próxima vez lo lograrás!",
+      "No es la correcta, "+username.value+". ¡Pero no te desanimes!"
+    ];
+
+    watch(correctAnswer, (newValue) => {
+      if (newValue !== null) {
+        const responses = newValue ? correctResponses : incorrectResponses;
+        const randomIndex = Math.floor(Math.random() * responses.length);
+        message.value = responses[randomIndex];
+      } else {
+        message.value = "";
+      }
+    });
+
+    return {
+      message,
+      isCorrect: correctAnswer,
+    };
+  },
 };
 </script>
 
