@@ -40,52 +40,44 @@
                     <h3>Instrucciones:</h3>
                 </div>
                 <div class="text-white work-sans flex flex-col gap-6 px-8 pt-8">
-                    <p>
-                        En este juego, hay algunas preguntas, con diferentes
-                        respuestas y tendrás que seleccionar la correcta para
-                        avanzar. Pulsa el botón de inicio y ¡Diviértete!
-                    </p>
+                    <QuestionComponent />
                 </div>
             </div>
         </div>
         <div class="border-l-[1px] h-full pt-10 h">
             <div class="h-[60%]">
-                <p>Question</p>
-                <QuizComponent @quizChecked="handleQuizChecked" :category="category" :difficulty="difficulty" />
+                <p>Respuestas</p>
+                <QuizComponent />
             </div>
 
             <div class=" border-t-[1px]">
-                <ConsoleComponent :isCorrect="isCorrect" />
+                <ConsoleComponent />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { useRoute } from "vue-router";
-import { ref } from 'vue';
+import { useQuizStore } from "../stores";
+import { ref,computed } from 'vue';
 import ConsoleComponent from "../components/Console.vue";
 import QuizComponent from "../components/QuizComponent.vue";
+import QuestionComponent from "../components/QuestionComponent.vue";
 
 export default {
     components: {
+        QuestionComponent,
         QuizComponent,
-        ConsoleComponent
+        ConsoleComponent,
     },
     setup() {
-        const isCorrect = ref(null);
-        const category = 'javascript';
-        const difficulty = 'facil';
-
-        const handleQuizChecked = (result) => {
-            isCorrect.value = result;
-        };
-
+        const quizStore = useQuizStore();
+        const category = ref('javascript');
+        const level = ref('facil');
+        quizStore.loadQuestions(category.value, level.value);
         return {
-            isCorrect,
-            handleQuizChecked,
             category,
-            difficulty,
+            level,
         };
     },
 };
