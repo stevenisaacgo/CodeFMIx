@@ -1,5 +1,5 @@
 <template>
-    <div class="border-b-[2px]">
+    <div class="border-b-[2px] text-[#dbdbdb]">
         <header
             class="flex justify-between items-center py-[10px] w-[1280px] mx-auto min-h-[87px]"
         >
@@ -17,9 +17,11 @@ import { useRoute } from "vue-router";
 import SoundButton from "./SoundButton.vue";
 const route = useRoute();
 
-export default{
+export default {
     components: {
-        LogoComponent, Navigation, SoundButton
-    }
-}
+        LogoComponent,
+        Navigation,
+        SoundButton,
+    },
+};
 </script>

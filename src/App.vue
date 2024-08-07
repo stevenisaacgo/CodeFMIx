@@ -1,10 +1,8 @@
 <template>
-    <div class="min-h-[100vh]">
-        <Header />
-        <main class="main">
-            <RouterView />
-        </main>
-    </div>
+    <Header />
+    <main class="main">
+        <RouterView />
+    </main>
 </template>
 
 <script setup>
@@ -14,15 +12,11 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const isInitialPage = route.path === "/";
-const headerAndGapHeight = isInitialPage ? "149px" : "89px";
-
-
-
-
+const headerHeight = "94px";
 </script>
 
 <style>
 .main {
-    height: calc(100vh - v-bind("headerAndGapHeight"));
+    height: calc(100vh - v-bind("headerHeight"));
 }
 </style>

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import { useQuizStore } from '../stores/index';
-import { computed } from 'vue';
+import { useQuizStore } from "../stores/index";
+import { computed } from "vue";
 export default {
     setup() {
         const quizStore = useQuizStore();
