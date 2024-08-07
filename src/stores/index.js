@@ -11,7 +11,7 @@ export const useQuizStore = defineStore('quiz', {
     selectedAnswer: null,
     correctAnswer: null,
     quizCompleted: false,
-    username: 'Usuario',
+    username: null,
   }),
   actions: {
     async loadQuestions(category, level) {
@@ -23,15 +23,17 @@ export const useQuizStore = defineStore('quiz', {
     setUsername(username) {
       this.username = username;
     },
+    resetScore() {
+      this.score = 0;
+    },
     selectAnswer(answer) {
       this.selectedAnswer = answer;
     },
     checkAnswer() {
-      const currentQuestion = this.questions[this.currentQuestionIndex];
-      this.correctAnswer = this.selectedAnswer === currentQuestion.correct_answer;
+      this.correctAnswer = this.selectedAnswer === this.currentQuestion.correct_answer;
     },
     updateScore(attempts){
-      const points = Math.max(1, 100 - (attempts-1) * 6);
+      const points = Math.max(1, 100 - (attempts-1) * 25);
       this.score += points;
     },
     nextQuestion() {

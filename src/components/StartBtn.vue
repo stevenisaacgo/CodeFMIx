@@ -43,6 +43,7 @@ export default {
             if (this.username) {
                 const quizStore = useQuizStore();
                 quizStore.setUsername(this.username);
+                quizStore.resetScore();
                 this.$router.push('/home');
             } else {
                 alert('Por favor, introduce un nombre de usuario.');
