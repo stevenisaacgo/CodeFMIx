@@ -1,6 +1,10 @@
 <template>
     <div>
-        <img class="w-[42px]" :src="iconUrl" @click="handleClick" />
+        <img
+            class="w-[42px] text-[#dbdbdb]"
+            :src="iconUrl"
+            @click="handleClick"
+        />
         <audio ref="soundMusic" src="/src/assets/music/sound.mp3" loop></audio>
     </div>
 </template>

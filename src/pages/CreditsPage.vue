@@ -1,17 +1,20 @@
 <template>
     <div class="pt-12">
-        <div class="pt-14">
+        <div class="pt-14 pb-10">
             <h2>Equipo</h2>
         </div>
         <div
-            class="w-full overflow-hidden flex items-center justify-center relative"
+            class="w-full overflow-hidden flex items-center justify-center relative pb-10"
         >
-            <img class="w-full pt-12" src="/img/imgPagePrincipal.jpeg" />
+            <img
+                class="w-full border-y-[1px]"
+                src="/img/imgPagePrincipal.jpeg"
+            />
         </div>
-        <div class="flex items-center justify-between pt-8">
-            <p class="ml-14">Francesca</p>
-            <p>Isaac</p>
-            <p class="mr-14">Marta</p>
+        <div class="flex items-center justify-between pt-8 text-[#dbdbdb]">
+            <span class="ml-14">Francesca</span>
+            <span>Isaac</span>
+            <span class="mr-14">Marta</span>
         </div>
     </div>
 </template>

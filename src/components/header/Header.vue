@@ -1,5 +1,5 @@
 <template>
-    <div class="border-b-[2px]">
+    <div class="border-b-[2px] text-[#dbdbdb]">
         <header
             class="flex justify-between items-center py-[10px] w-[1280px] mx-auto min-h-[87px]"
             v-if="username"
@@ -20,7 +20,7 @@ import { useQuizStore } from "../../stores/index";
 import { computed } from "vue";
 const route = useRoute();
 
-export default{
+export default {
     components: {
         LogoComponent, Navigation, SoundButton
     },

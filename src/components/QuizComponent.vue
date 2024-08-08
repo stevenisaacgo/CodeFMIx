@@ -1,7 +1,7 @@
 <!-- src/components/AnswersComponent.vue -->
 <template>
-    <div class="answers" v-if="answers">
-        <h2 class="text-xl mb-4">{{ question }}</h2>
+    <div class="answers text-lg work-sans" v-if="answers">
+        <h3 class="mb-4">{{ question }}</h3>
         <div v-for="(answer, key) in answers" :key="key" class="mb-4">
             <label
                 class="flex items-center bg-gray-100 text-[#242424] rounded-md px-3 py-2 my-2 hover:bg-[#5c7c89] cursor-pointer"
@@ -35,15 +35,20 @@ export default {
         const quizStore = useQuizStore();
         const question = computed(() => quizStore.currentQuestion?.question);
         const answers = computed(() => quizStore.currentQuestion?.answers);
-        
+
         const selectedAnswer = ref(null);
 
         const correctAnswer = computed(() => quizStore.correctAnswer);
         const buttonText = computed(() =>
             correctAnswer.value ? "Next ->" : "Run Code"
         );
-        const buttonClass = computed(() => (correctAnswer.value === null ? 'btn bg-[#7f9ba9] hover:bg-[#2a4957]' : correctAnswer.value ? 'btn bg-green-500 hover:bg-green-600' : 'btn bg-red-200 hover:bg-red-400'));
-
+        const buttonClass = computed(() =>
+            correctAnswer.value === null
+                ? "btn bg-[#7f9ba9] hover:bg-[#2a4957]"
+                : correctAnswer.value
+                ? "btn bg-[#46663f] hover:bg-[#46663f]"
+                : "btn bg-red-200 hover:bg-red-400"
+        );
 
         const handleButtonClick = () => {
             if (correctAnswer.value) {
@@ -69,7 +74,7 @@ export default {
             buttonText,
             buttonClass,
             handleButtonClick,
-            question
+            question,
         };
     },
 };
