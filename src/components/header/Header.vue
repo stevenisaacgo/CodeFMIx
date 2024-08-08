@@ -19,9 +19,14 @@ const route = useRoute();
 
 export default {
     components: {
-        LogoComponent,
-        Navigation,
-        SoundButton,
+        LogoComponent, Navigation, SoundButton
     },
-};
+    setup() {
+        const quizStore = useQuizStore();
+        const username = computed(() => quizStore.username);
+        return {
+            username
+        }
+    }
+}
 </script>
