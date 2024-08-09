@@ -16,7 +16,7 @@
                     leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                     <MenuItems class="absolute right-0 mt-2 w-56 origin-top-right bg-[#242424] border-2 z-10">
                         <div class="py-1">
-                            <LanguageMenu language="C++" :levels="['facil', 'normal', 'dificil']" />
+                            <LanguageMenu language="CPP" :levels="['facil', 'normal', 'dificil']" />
                             <LanguageMenu language="CSharp" :levels="['facil', 'normal', 'dificil']" />
                             <LanguageMenu language="CSS" :levels="['facil', 'normal', 'dificil']" />
                             <LanguageMenu language="HTML" :levels="['facil', 'normal', 'dificil']" />
