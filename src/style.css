@@ -15,6 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.primary-font {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;

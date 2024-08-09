@@ -43,5 +43,3 @@ onMounted(() => {
     document.addEventListener("click", playSound, { once: true });
 });
 </script>
-
-<style scoped></style>

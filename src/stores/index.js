@@ -1,4 +1,3 @@
-// src/store/index.js
 import { defineStore } from 'pinia';
 import { fetchQuestions } from '../services/api';
 

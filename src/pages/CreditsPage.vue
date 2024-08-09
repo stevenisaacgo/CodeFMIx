@@ -22,5 +22,3 @@
 <script>
 import { useRoute } from "vue-router";
 </script>
-
-<style></style>

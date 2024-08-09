@@ -1,7 +1,6 @@
-<!-- src/components/AnswersComponent.vue -->
 <template>
     <div class="answers text-lg work-sans" v-if="answers">
-        <h3 class="mb-4">{{ question }}</h3>
+        <h3 class="mb-4 primary-font text-sm">{{ question }}</h3>
         <div v-for="(answer, key) in answers" :key="key" class="mb-4">
             <label
                 class="flex items-center bg-gray-100 text-[#242424] rounded-md px-3 py-2 my-2 hover:bg-[#5c7c89] cursor-pointer"

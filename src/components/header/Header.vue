@@ -1,15 +1,12 @@
 <template>
-    <div class="border-b-[2px] text-[#dbdbdb]">
-        <header
-            class="flex justify-between items-center py-[10px] w-[1280px] mx-auto min-h-[87px]"
-            v-if="username"
-        >
-            <LogoComponent class="w-[50px]" />
-            <Navigation v-if="this.$route !== '/'" />
-            <SoundButton />
-        </header>
-    </div>
+    <header class="border-b-2 flex justify-between items-center py-2 w-full mx-auto min-h-[87px] px-8"
+        v-if="username">
+        <LogoComponent class="w-12" />
+        <Navigation v-if="$route.path !== '/'" />
+        <SoundButton />
+    </header>
 </template>
+
 
 <script>
 import Navigation from "./navigation/Navigation.vue";

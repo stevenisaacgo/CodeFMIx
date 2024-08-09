@@ -17,13 +17,6 @@
 
 <script>
 export default {
-    name: "LogoComponent",
-
-    data() {
-        // return {
-        // }
-    },
+    name: "LogoComponent"
 };
 </script>
-
-<style></style>

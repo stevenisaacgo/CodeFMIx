@@ -1,8 +1,10 @@
 <template>
-    <Header />
-    <main class="main">
-        <RouterView />
-    </main>
+    <div class="min-h-screen flex flex-col">
+        <Header />
+        <main class=" flex-1">
+            <RouterView />
+        </main>
+    </div>
 </template>
 
 <script setup>
@@ -12,11 +14,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const isInitialPage = route.path === "/";
-const headerHeight = "94px";
 </script>
 
 <style>
-.main {
-    height: calc(100vh - v-bind("headerHeight"));
-}
 </style>
